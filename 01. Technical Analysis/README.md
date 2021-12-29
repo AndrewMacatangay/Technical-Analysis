@@ -40,7 +40,7 @@ looking at specific patterns.
 <b>Fundamental Analysis:</b>
 ```
 A type of analysis that is based on the premise that the market overlooks value. Instead of analyzing charts, a fundamental
-analyst may go through the balance sheet of a company in search of intrinsic calue not currently reflectedin the current
+analyst may go through the balance sheet of a company in search of intrinsic value not currently reflected in the current
 market price.
 ```
 
