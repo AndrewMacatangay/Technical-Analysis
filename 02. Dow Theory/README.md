@@ -76,45 +76,71 @@ reversal. Low volume signals a weakness in a trend.
 It might be hard to tell the difference between a potential rally and a bear market. If there is no clear reversal, it might better to assume
 that the trend will continue the way it is. Be careful, and when the reversal makes itself clear, then reconsider your actions.
 
+<h2>Other Notes</h2>
+
+<b>Closing Prices and Line Ranges:</b><br>
+Dow relied solely on closing prices to signal trends rather than intraday price movement. The closing can be used to gauge the overall
+sentiment of a stock. If the stock closes at a high, it may signal that many traders are willing to hold overnight. On the otherhand, if a
+stock experiences a selloff, it may indicate a bearish symbol. Intraday price fluctuations are sometimes just interpretted as noise.
+
+Another aspect important to the Dow theory is the concept of line ranges. They are lines that indicate levels of resistance and support. If
+a stock's price is to stabilize within a specific line range, a trend may not be clear, and we would have to wait for a break in the support or
+resistance. A break in the support could lead to a breakdown and a break in the resistance could lead to a breakout.
+
+<b>Signals and Identification of Trends:</b><br>
+
+<b>Reversals:</b><br>
+
 <h2>Vocab</h2>
 
 <b>Efficient Market Hypothesis</b>
 ```
+A hypothesis that states that the current share price of a stock reflects all information known and unknown.
 ```
 
-<b>Line Ranges</b>
+<b>Line Range</b>
 ```
+A period of consolidation where the price of the stock remains under a resistance line and above a support line. Since Dow
+theory suggests that we wait for a clear reversal, a person may have to wait until a line of resistance or support is broken
+before making a decision.
 ```
 
 <b>Peak</b>
 ```
+The highest price of a market's movement.
 ```
 
 <b>Primary Trend</b>
 ```
+A main course of movement such as a bear or bull market.
 ```
 
 <b>Pullback</b>
 ```
+A secondary trend of a bull market where the price of a stock may temporarily drop as a way to correct an overvalued stock.
 ```
 
 <b>Rally</b>
 ```
+A secondary trend of a bull market where the price of a stock may temporarily rise as a way to correct an undervalued stock.
 ```
 
 <b>Reversal</b>
 ```
+A changing in the direction of a stock. A reversal can be a bear market becoming a bull market or vice versa.
 ```
 
 <b>Secondary Trend</b>
 ```
+An underlying course of movement such as a rally or pullback.
 ```
 
 <b>Trough</b>
 ```
+The lowest price of a market's movement.
 ```
 
-<h2>Links/Sources</h2>
+## Links/Sources
 [Carry Trader (Primary Trend Phases)](https://carrytrader.com/markets/stock-market-trading/dow-theory)<br>
 [Investopedia (Dow Theory)](https://www.investopedia.com/terms/d/dowtheory.asp)<br>
-[Investopedia (Efficient Market Hypothesis)](https://www.investopedia.com/terms/e/efficientmarkethypothesis.asp)
+[Investopedia (Efficient Market Hypothesis)](https://www.investopedia.com/terms/e/efficientmarkethypothesis.asp)<br>
