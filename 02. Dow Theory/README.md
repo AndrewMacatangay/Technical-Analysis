@@ -1,46 +1,84 @@
-# Dow Theory
+<h1>Dow Theory</h1>
 
-## 6 Main Components of the Dow Theory
+<h2>6 Main Components of the Dow Theory</h2>
 
-ORGANIZE THE BELOW BULLETPOINT FOR TOMORROW<br>
-
-### 1. The Market Discounts Everything<br>
+<div align = "center"><h3>1. The Market Discounts Everything</h3></div>
 The Dow Theory operates on the efficient market hypothesis (EMH), which states that the value of an asset at some given moment,
-already takes into account all information that is known or unknown. In essence, beating the market is impossible.<br>
+already takes into account all information that is known or unknown. In simpler terms, beating the market is impossible because it is
+efficient in reflecting the fair values of an asset.<br><br>
 
 EMH asserts that fundamental analysis is unnecessary. If all information is already factored into the price, and fundamental analysis
 consists of looking for unrealized value, then there is no point to look for unrealized value since all information has already been factored
 into the current market price.<br>
 
-It also asserts that technical analysis is unnecessary. If all information is already factored into the price, and technical analysis
-consists of looking at past trends, then there is no point to look at past trends
+It also asserts that technical analysis is unnecessary. If all information is already factored into the price, and technical analysis consists of
+looking at past trends, then there is no point to look at past trends for a bargain price since all information has already been factored
+into the current market price.<br>
 
-Since all of the information is factored into the current price of the stock, we only care about the new information that comes
-in. Since the price of the stock is dependent on the new information, we can assume that the price of the stock is independent
-from the old information (random walk)
+<b>Weak Form:</b><br>
+The weak form of EMH asserts that past market values do not have influence on future market prices (random walk). In the weak form of
+EMH, technical analysis can't be used since technical analysis relies on past trends.<br><br>
 
-Once new information exists, it will be factored into the price of the stock
-Since the market is efficient in updating "accurate" pricing, there is no way to beat the market because there are no
-inefficiences to exploit or make a profit from
+<b>Semi-Strong Form:</b><br>
+The semi-strong form of EMH asserts that all information, public but not private, has been factored into a current share price. This
+implies that fundamental analysis can't be used because all public information has already been factored in, so there are no inefficiencies
+(public) to profit off of. Technical analysis can't be used either for the above reason.<br><br>
 
-no way to indentify a bargain stock -> no fundamental analysis
-no need to use past stock data since it is already factored in -> no technical analysis
+<b>Strong Form:</b><br>
+The strong form of EMH asserts that all information, public and private, has been factored into a current share price. In this case, any
+analysis is unnecessary because the market is just and fair with its prices at all times, and you cannot beat the market.
 
-The premise is that the current value of a stock is the fair and accurate value for that stock
+<div align = "center"><img src = "https://user-images.githubusercontent.com/61638274/147798281-87d863f6-4a33-43db-abf1-ad7fe445d7d9.png" alt = image></div>
 
-Technical Analysis is unnecessary: If we consider the current price of a stock to be the result of all known and unknown factors,
-there is no need to look at previous performance since it is already factored into the price.
-Fundamental Analysis is unnecessary: Once new information becomes available, it is quickly reflected in the price of the stock
 
-### 2. There Are Three Primary Kinds of Market Trends<br>
-### 3. Primary Trends Have Three Phases<br>
-### 4. Indices Must Confirm Each Other<br>
-### 5. Volume Must Confirm the Trend<br>
-### 6. Trends Persist Until a Clear Reversal Occurs<br>
+<div align = "center"><h3>2. There Are Three Primary Kinds of Market Trends</h3></div>
 
-## Vocab
+There are three different kinds of market trends. There is a primary trend that will typically last a year or longer. This primary trend can be
+a bear or bull market. Then, there are also secondary trends such as pullbacks in a bull market or rallys in the bear market. These trends
+can be seen as "corrections" to an overvalued or undervalued market and can last anywhere from three weeks to three months. Lastly,
+there are minor trends that are just noise.<br>
 
-<b>Efficient Markets Hypothesis</b>
+<div align = "center"><h3>3. Primary Trends Have Three Phases</h3></div>
+
+In a bull market, there is the <b>accumulation phase</b>, the <b>public participation phase</b>, and the <b>excess phase</b>. The accumulation phase
+consists of institutional investors buying up a significant amount of a stock. It is usually long and drawn out to discretely keep the price
+of the stock low. In the public participation phase, the accumulation from the institutional investors may start to bring up the price of the
+stock, which signals to the populous that a new trend may arise. As more people invest, it starts to drive up the price of the stock. The
+excess phase is the point when the trend accelerates further creating a bubble-like situation. This is where markets can become volatile
+and might signal an exit for many.
+
+In a bear market, there is the <b>distribution phase</b>, the <b>public participation phase</b>, and the <b>panic phase</b>. In the distribution phase, the bear
+market is said to begin. Investors will back out of their long positions, and may open short positions if a stock is overbought (typically by 
+inexperienced investors). In the next phase, the public will start to react to the potentially overbought market and will start selling their
+stock. Volume will start to decrease as buying subsides. The last phase is the panic phase where individuals with positions may begin to
+worry about their losses and a mass selloff occurs. This could open up a long opportunity for smart money depending on the conditions
+of the market.
+
+<div align = "center"><img src = "https://user-images.githubusercontent.com/61638274/147798105-7104dd27-5244-4df4-a1c5-438ebe0f6b19.png" alt = image></div>
+
+<div align = "center"><h3>4. Indices Must Confirm Each Other</h3></div>
+
+In Dow's time, he used the Dow Jones Industrial Average and Dow Jones Transporation Average to determine new trends. He figured that
+these two indicies are closely related and that if one average was trending one way, and another average was trending the other, that
+there would be a new trend emerging. A major driver in the transportation sector is the ability to move products created by the industrial
+sector. This means that if transportation is doing well, it might be that industries are doing well also. If industries are not doing well (yet),
+then it could signal a good opportunity to buy into them. If transportation is on a downfall, it might be that industries are about to fall as
+well.
+
+<div align = "center"><h3>5. Volume Must Confirm the Trend</h3></div>
+
+Higher volumes are a good indicator of how the trend is moving. If volume is going up in a bull market, then volumes should drop in a
+pullback or reversal. The same can be said for bear markets. If the volumes are going up, then volumes should drop in a rally or a
+reversal. Low volume signals a weakness in a trend.
+
+<div align = "center"><h3>6. Trends Persist Until a Clear Reversal Occurs</h3></div>
+
+It might be hard to tell the difference between a potential rally and a bear market. If there is no clear reversal, it might better to assume
+that the trend will continue the way it is. Be careful, and when the reversal makes itself clear, then reconsider your actions.
+
+<h2>Vocab</h2>
+
+<b>Efficient Market Hypothesis</b>
 ```
 ```
 
@@ -76,6 +114,7 @@ Fundamental Analysis is unnecessary: Once new information becomes available, it 
 ```
 ```
 
-## Links/Sources
+<h2>Links/Sources</h2>
+[Carry Trader (Primary Trend Phases)](https://carrytrader.com/markets/stock-market-trading/dow-theory)<br>
 [Investopedia (Dow Theory)](https://www.investopedia.com/terms/d/dowtheory.asp)<br>
 [Investopedia (Efficient Market Hypothesis)](https://www.investopedia.com/terms/e/efficientmarkethypothesis.asp)
