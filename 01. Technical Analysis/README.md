@@ -12,7 +12,7 @@ applied to prices and volumes to help spot trends. <br> <br>
 
 ## Pitfalls
 
-Technical analysis isn't without it's downfalls. Since analyzing chart patterns may be subjective, one individual could interpret some
+Technical analysis isn't without its downfalls. Since analyzing chart patterns may be subjective, one individual could interpret some
 pattern differently than another person. One might also have to subject themselves to the belief that "history repeats itself" which can be
 argued to be a self-fulfilling prophecy. Fundamental analysts see the market in a different light. They believe that it may be more worth-
 while to dig through a company's balance sheet in search of intrinsic value that is not currently reflected in the price. On the contrary,
