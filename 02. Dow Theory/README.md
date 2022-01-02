@@ -144,3 +144,4 @@ The lowest price of a market's movement.
 [Carry Trader (Primary Trend Phases)](https://carrytrader.com/markets/stock-market-trading/dow-theory)<br>
 [Investopedia (Dow Theory)](https://www.investopedia.com/terms/d/dowtheory.asp)<br>
 [Investopedia (Efficient Market Hypothesis)](https://www.investopedia.com/terms/e/efficientmarkethypothesis.asp)<br>
+[YouTube (Efficient Market Hypothesis)](https://www.youtube.com/watch?v=UTHvfI9awBk)<br>
