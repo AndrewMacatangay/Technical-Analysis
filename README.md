@@ -5,12 +5,12 @@ that one day I can use this information to create something more extravagant and
 of doing things we thought possible.
 
 ```
-“The inside of my mind has a zillion things about it but... people that don't see inside of my mind don't know there are a
-zillion things and... Y'know, since no one sees inside my mind, no one really knows. But... one day people will know. One
-day people will know 'cause that's my master plan. To film it all. To document every aspect of the life that is me. And put
-it in a time capsule in my backyard and so that one day some alien or some highly evolved species will find it and...
-understand.”
-                                                                                                  George Tooney, Mean Creek
+“The inside of my mind has a zillion things about it but... people that don't see inside of my mind don't
+know there are a zillion things and... Y'know, since no one sees inside my mind, no one really knows.
+But... one day people will know. One day people will know 'cause that's my master plan. To film it all. To
+document every aspect of the life that is me. And put it in a time capsule in my backyard and so that one
+day some alien or some highly evolved species will find it and... understand.”
+                                                                                George Tooney, Mean Creek
 ```
 
 ## Contents
