@@ -1,4 +1,11 @@
 <h1>Dow Theory</h1>
+Charles Dow was an American journalist in the late 19th century. In one of his missions, he was sent to Colorado to report on the
+booming silver mining operation in Leadville so that the east coast bankers could gain the publicity to acquire investors. Through his
+journey, he learned a great bit about the world of money and spoke of how ordinary men became millionaires overnight. His successful
+journalism career would later bring him to New York City where he would co-found the Wall Street Journal with Edward Jones and Charles
+Bergstresser. This publication was meant to give an unbiased and fair account of the daily news regarding stocks, bonds, and
+commodities. Towards the end of his life, he published his findings and ideas on stock price movement which would become the Dow
+Theory that we know of today.
 
 <h2>6 Main Components of the Dow Theory</h2>
 
@@ -34,7 +41,7 @@ analysis is unnecessary because the market is just and fair with its prices at a
 <div align = "center"><h3>2. There Are Three Primary Kinds of Market Trends</h3></div>
 
 There are three different kinds of market trends. There is a primary trend that will typically last a year or longer. This primary trend can be
-a bear or bull market. Then, there are also secondary trends such as pullbacks in a bull market or rallys in the bear market. These trends
+a bear or bull market. Then, there are also secondary trends such as pullbacks in a bull market or rallies in the bear market. These trends
 can be seen as "corrections" to an overvalued or undervalued market and can last anywhere from three weeks to three months. Lastly,
 there are minor trends that are just noise.<br>
 
@@ -58,12 +65,12 @@ of the market.
 
 <div align = "center"><h3>4. Indices Must Confirm Each Other</h3></div>
 
-In Dow's time, he used the Dow Jones Industrial Average and Dow Jones Transporation Average to determine new trends. He figured that
-these two indicies are closely related and that if one average was trending one way, and another average was trending the other, that
-there would be a new trend emerging. A major driver in the transportation sector is the ability to move products created by the industrial
-sector. This means that if transportation is doing well, it might be that industries are doing well also. If industries are not doing well (yet),
-then it could signal a good opportunity to buy into them. If transportation is on a downfall, it might be that industries are about to fall as
-well.
+In Dow's time, he used the Dow Jones Industrial Average and Dow Jones Transportation Average to determine new trends. He figured
+that these two indices are closely related and that if one average was trending one way, and another average was trending the other,
+that there would be a new trend emerging. A major driver in the transportation sector is the ability to move products created by the
+industrial sector. This means that if transportation is doing well, it might be that industries are doing well also. If industries are not doing
+well (yet), then it could signal a good opportunity to buy into them. If transportation is on a downfall, it might be that industries are
+about to fall as well.
 
 <div align = "center"><h3>5. Volume Must Confirm the Trend</h3></div>
 
@@ -80,16 +87,18 @@ that the trend will continue the way it is. Be careful, and when the reversal ma
 
 <b>Closing Prices and Line Ranges:</b><br>
 Dow relied solely on closing prices to signal trends rather than intraday price movement. The closing can be used to gauge the overall
-sentiment of a stock. If the stock closes at a high, it may signal that many traders are willing to hold overnight. On the otherhand, if a
-stock experiences a selloff, it may indicate a bearish symbol. Intraday price fluctuations are sometimes just interpretted as noise.
+sentiment of a stock. If the stock closes at a high, it may signal that many traders are willing to hold overnight. On the other hand, if a
+stock experiences a selloff, it may indicate a bearish symbol. Intraday price fluctuations are sometimes just interpreted as noise.
 
 Another aspect important to the Dow theory is the concept of line ranges. They are lines that indicate levels of resistance and support. If
 a stock's price is to stabilize within a specific line range, a trend may not be clear, and we would have to wait for a break in the support or
 resistance. A break in the support could lead to a breakdown and a break in the resistance could lead to a breakout.
 
 <b>Signals and Identification of Trends:</b><br>
-
-<b>Reversals:</b><br>
+Dow identified trends using peak-and-trough analysis. An upward trend was seen through higher peaks and higher troughs. A downward
+trend was seen through lower peaks and lower troughs. This ties back into breakouts or breakdowns after resistance and support lines
+are broken. Similar to Newton's first law of motion, an object in motion, tends to stay in motion until some force acts on it. This force can
+be an opposing business condition.
 
 <h2>Vocab</h2>
 
@@ -144,4 +153,5 @@ The lowest price of a market's movement.
 [Carry Trader (Primary Trend Phases)](https://carrytrader.com/markets/stock-market-trading/dow-theory)<br>
 [Investopedia (Dow Theory)](https://www.investopedia.com/terms/d/dowtheory.asp)<br>
 [Investopedia (Efficient Market Hypothesis)](https://www.investopedia.com/terms/e/efficientmarkethypothesis.asp)<br>
+[Wikipedia (Charles Dow)](https://en.wikipedia.org/wiki/Charles_Dow)<br>
 [YouTube (Efficient Market Hypothesis)](https://www.youtube.com/watch?v=UTHvfI9awBk)<br>
