@@ -8,7 +8,7 @@ applied to prices and volumes to help spot trends. <br> <br>
 <b>Beliefs:</b><br>
 1. The current market price of a stock is the product of all possible factors (known or unknown)<br>
 2. Prices move in trends<br>
-3. History repreats itself
+3. History repeats itself
 
 ## Pitfalls
 
