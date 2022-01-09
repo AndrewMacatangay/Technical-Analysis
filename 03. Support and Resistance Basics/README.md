@@ -33,7 +33,7 @@ sellers will both notice this "barrier" and human psychology will play a part in
 
 <b>Preceding Price Move:</b><br>
 If a stock is moving quickly in an uptrend or downtrend, it may be more likely that a resistance or support level will be met. If it is slowly
-moving, then it may have an easier time sneaking past a support or resistance level. Typically a price surge would be a result of increased
+moving, then it may have an easier time sneaking past a support or resistance level. Typically, a price surge would be a result of increased
 volume, and with increased volume, there are more investors to normalize the price of a stock.<br><br>
 
 <b>Round Numbers:</b><br>
