@@ -17,3 +17,4 @@ day some alien or some highly evolved species will find it and... understand.”
 1. [Technical Analysis](https://github.com/AndrewMacatangay/Technical-Analysis/tree/master/01.%20Technical%20Analysis)
 2. [Dow Theory](https://github.com/AndrewMacatangay/Technical-Analysis/tree/master/02.%20Dow%20Theory)
 3. [Support and Resistance Basics](https://github.com/AndrewMacatangay/Technical-Analysis/tree/master/03.%20Support%20and%20Resistance%20Basics)
+4. [Support](https://github.com/AndrewMacatangay/Technical-Analysis/tree/master/04.%20Support)
