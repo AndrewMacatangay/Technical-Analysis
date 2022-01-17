@@ -5,12 +5,12 @@ from plotly.subplots import make_subplots
 from datetime import date, datetime
 
 class Chart:
-    def __init__(self, ticker, start, end, title):
+    def __init__(self, ticker, start, end, title, chartType):
         self.df = web.DataReader(name        = ticker,
                                  data_source = "yahoo",
                                  start       = start,
                                  end         = end)
-        
+        self.ticker = ticker
         self.days = len(self.df.index)
         
         self.dateToPrice = {}
@@ -18,29 +18,20 @@ class Chart:
             self.dateToPrice[self.df.index[x].strftime("%m-%d-%Y")] = self.df.Close[x]
         
         self.fig = make_subplots(shared_xaxes     = True,
-                                 vertical_spacing = 0.03,
                                  subplot_titles   = ((title, "Volume")),
                                  specs            = [[{"secondary_y": True}]])
         
-        self.fig.add_trace(go.Candlestick(x          = self.df.index,
-                                          open       = self.df.Open,
-                                          close      = self.df.Close,
-                                          low        = self.df.Low,
-                                          high       = self.df.High,
-                                          name       = ticker,
-                                          showlegend = True),
-                           secondary_y = True)
+        if chartType == "Candlestick":
+            self.makeCandlestickChart()
+        elif chartType == "Line":
+            self.makeLineChart();
         
         self.fig.update_layout(yaxis1 = {"side": "right", "showgrid": False},
                                yaxis2 = {"side": "left"});
+
+    def addClosingPrices(self):
+        self.makeLineChart()
         
-    def addVolume(self):
-        self.fig.add_trace(go.Bar(x      = self.df.index,
-                                  y      = self.df.Volume,
-                                  name   = "Daily Volume",
-                                  marker = {"color": "#636EFB"}),
-                           secondary_y = False)
-    
     def addMovingAverage(self, days, color, name):
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = self.df.Close.rolling(window = days, min_periods = 1).mean(),
@@ -48,15 +39,18 @@ class Chart:
                                       line = {"width": 1, "color": color},
                                       name = name),
                            secondary_y = True)
+
+    def addResistance(self, value, color, name):
+        self.addSupport(value, color, name)
         
-    def addHorizontalLine(self, value, color, name):
+    def addSupport(self, value, color, name):
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = self.df.Close * 0 + value,
                                       mode = "lines",
                                       line = {"width": 1, "color": color},
                                       name = name),
                            secondary_y = True)
-        
+
     def addTrendline(self, date1, date2, name, color, extend = 5):
         if date1 not in self.dateToPrice.keys():
             print("The start date is not a trading day! '" + name + "' will not be displayed...")
@@ -98,6 +92,31 @@ class Chart:
                                       mode = "lines",
                                       line = {"width": 1, "color": color},
                                       name = name),
+                           secondary_y = True)
+        
+    def addVolume(self):
+        self.fig.add_trace(go.Bar(x      = self.df.index,
+                                  y      = self.df.Volume,
+                                  name   = "Daily Volume",
+                                  marker = {"color": "#636EFB"}),
+                           secondary_y = False)
+        
+    def makeCandlestickChart(self):
+        self.fig.add_trace(go.Candlestick(x          = self.df.index,
+                                          open       = self.df.Open,
+                                          close      = self.df.Close,
+                                          low        = self.df.Low,
+                                          high       = self.df.High,
+                                          name       = self.ticker,
+                                          showlegend = True),
+                           secondary_y = True)
+        
+    def makeLineChart(self):
+        self.fig.add_trace(go.Scatter(x    = self.df.index,
+                                      y    = self.df.Close,
+                                      mode = "lines",
+                                      line = {"width": 1, "color": "black"},
+                                      name = "Closing Price"),
                            secondary_y = True)
             
     def show(self):
