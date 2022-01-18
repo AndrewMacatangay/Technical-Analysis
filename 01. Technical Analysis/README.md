@@ -10,6 +10,9 @@ applied to prices and volumes to help spot trends. <br> <br>
 2. Prices move in trends<br>
 3. History repeats itself
 
+<div align = "center"><img src = "https://user-images.githubusercontent.com/61638274/149855903-4bda6dae-4499-4d1a-b31a-3c21f41dd0a3.png" alt = image></img></div>
+
+
 ## Pitfalls
 
 Technical analysis isn't without its downfalls. Since analyzing chart patterns may be subjective, one individual could interpret some
