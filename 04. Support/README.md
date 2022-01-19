@@ -6,7 +6,7 @@ level, we can draw a line along the low points of an asset's price. This line ca
 Support levels can be used as indicators to know when to enter a position. If an investor is feeling bullish about a stock and the price of
 the stock is at a support level, the investor may enter a long position in hopes that the price rises (reversal). On the other hand, if an
 investor is feeling bearish about a stock and the price of the stock is at a support level, the investor may enter a short position in hopes
-that the price falls. If the later were to happen, the support level that has been breached can become a future resistance level.
+that the price falls. If the latter were to happen, the support level that has been breached can become a future resistance level.
 
 <div align = "center"><img src = "https://priceaction.com/wp-content/uploads/2015/08/SR1.png" alt = image></div>
 
