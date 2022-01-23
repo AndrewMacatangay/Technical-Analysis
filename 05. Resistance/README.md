@@ -25,6 +25,7 @@ occurs, then your position may not execute if the uptrend continues. The can lea
 
 <b>Resistance</b>
 ```
+The "ceiling", or price where a stock seizes to rise due to a higher supply than demand or other behavioral factors.
 ```
 
 <b>Stop-loss Order</b>
