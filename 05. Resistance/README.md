@@ -30,10 +30,12 @@ The "ceiling", or price where a stock seizes to rise due to a higher supply than
 
 <b>Stop-loss Order</b>
 ```
+An order that specifies that a stock be bought or sold when it reaches a specific target price.
 ```
 
 <b>Trade Trigger</b>
 ```
+Any event that signals a transaction if some criteria is met.
 ```
 
 ## Links/Sources
