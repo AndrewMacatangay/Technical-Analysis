@@ -13,6 +13,7 @@ class Chart:
         self.ticker = ticker
         self.days = len(self.df.index)
         
+        #We can add non-trading days to the dictionary here for a smooth line!
         self.dateToPrice = {}
         for x in range(self.days):
             self.dateToPrice[self.df.index[x].strftime("%m-%d-%Y")] = self.df.Close[x]
@@ -67,6 +68,9 @@ class Chart:
         leftIndex = None
         rightIndex = None
         
+        d1 = date1[6:] + "-" + date1[0:5]
+        d2 = date2[6:] + "-" + date2[0:5]
+        
         arr = []
         for x in range(self.days):
             if self.df.index[x].strftime("%m-%d-%Y") == date1:
@@ -75,7 +79,7 @@ class Chart:
             if self.df.index[x].strftime("%m-%d-%Y") == date2:
                 rightIndex = x
             
-            if self.df.index[x].strftime("%m-%d-%Y") >= date1 and self.df.index[x].strftime("%m-%d-%Y") <= date2:
+            if self.df.index[x].strftime("%Y-%m-%d") >= d1 and self.df.index[x].strftime("%Y-%m-%d") <= d2:
                 arr.append(self.dateToPrice[date1] + (counter * slope))
                 counter += 1
             else:
