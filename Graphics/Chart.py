@@ -12,8 +12,8 @@ class Chart:
                                  end         = end)
         self.ticker = ticker
         self.days = len(self.df.index)
+        self.start = start
         
-        #We can add non-trading days to the dictionary here for a smooth line!
         self.dateToPrice = {}
         for x in range(self.days):
             self.dateToPrice[self.df.index[x].strftime("%m-%d-%Y")] = self.df.Close[x]
@@ -64,7 +64,7 @@ class Chart:
         days = (datetime.strptime(date2, "%m-%d-%Y") - datetime.strptime(date1, "%m-%d-%Y")).days
         slope = diff / days
         counter = 0
-        
+
         leftIndex = None
         rightIndex = None
         
@@ -72,19 +72,32 @@ class Chart:
         d2 = date2[6:] + "-" + date2[0:5]
         
         arr = []
-        for x in range(self.days):
+        
+        index = -1;
+        for x in range(len(self.df.index)):
             if self.df.index[x].strftime("%m-%d-%Y") == date1:
+                index = x
+                break
+        
+        prev = self.df.index[index].strftime("%m-%d-%Y")
+        
+        for x in range(self.days):
+            currentDate = self.df.index[x]
+            
+            if currentDate.strftime("%m-%d-%Y") == date1:
                 leftIndex = x
                 
-            if self.df.index[x].strftime("%m-%d-%Y") == date2:
+            if currentDate.strftime("%m-%d-%Y") == date2:
                 rightIndex = x
-            
-            if self.df.index[x].strftime("%Y-%m-%d") >= d1 and self.df.index[x].strftime("%Y-%m-%d") <= d2:
+
+            if currentDate.strftime("%Y-%m-%d") >= d1 and currentDate.strftime("%Y-%m-%d") <= d2:
+                counter += (datetime.strptime(currentDate.strftime("%m-%d-%Y"), "%m-%d-%Y") - datetime.strptime(prev, "%m-%d-%Y")).days
                 arr.append(self.dateToPrice[date1] + (counter * slope))
-                counter += 1
+                prev = currentDate.strftime("%m-%d-%Y")
             else:
                 arr.append(None)
 
+        #This needs to be fixed
         for x in range(1, 1 + extend):
             if(leftIndex - x >= 0):
                 arr[leftIndex - x] = arr[leftIndex] - (x * slope)
