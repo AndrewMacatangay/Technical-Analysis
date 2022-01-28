@@ -52,6 +52,7 @@ class Chart:
                                       name = name),
                            secondary_y = True)
 
+    #Make sure to clean up the code here!
     def addTrendline(self, date1, date2, name, color, extend = 5):
         if date1 not in self.dateToPrice.keys():
             print("The start date is not a trading day! '" + name + "' will not be displayed...")
@@ -105,6 +106,17 @@ class Chart:
                 #arr[rightIndex + x] = arr[rightIndex] + (x * slope)
                 
         #Do right side here first
+        ex = extend
+        inFront = rightIndex + 1
+        counter = 0
+        
+        while(ex > 0 and inFront < len(self.df.index)):
+            numDays = (datetime.strptime(self.df.index[inFront].strftime("%m-%d-%Y"), "%m-%d-%Y") - datetime.strptime(self.df.index[inFront - 1].strftime("%m-%d-%Y"), "%m-%d-%Y")).days
+            counter += numDays
+            arr[inFront] = self.dateToPrice[date2] + (counter * slope)
+            ex -= numDays
+            inFront += 1
+            
             
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = arr,
