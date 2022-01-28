@@ -96,13 +96,15 @@ class Chart:
                 prev = currentDate.strftime("%m-%d-%Y")
             else:
                 arr.append(None)
-
+            
         #This needs to be fixed
-        for x in range(1, 1 + extend):
-            if(leftIndex - x >= 0):
-                arr[leftIndex - x] = arr[leftIndex] - (x * slope)
-            if(rightIndex + x <= self.days - 1):
-                arr[rightIndex + x] = arr[rightIndex] + (x * slope)
+        #for x in range(1, 1 + extend):
+            #if(leftIndex - x >= 0):
+                #arr[leftIndex - x] = arr[leftIndex] - (x * slope)
+            #if(rightIndex + x <= self.days - 1):
+                #arr[rightIndex + x] = arr[rightIndex] + (x * slope)
+                
+        #Do right side here first
             
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = arr,
