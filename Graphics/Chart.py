@@ -12,11 +12,14 @@ class Chart:
                                  end         = end)
         self.ticker = ticker
         self.days = len(self.df.index)
-        self.start = start
+        
+        self.dates = []
+        for x in self.df.index:
+            self.dates.append(x.strftime("%m-%d-%Y"))
         
         self.dateToPrice = {}
         for x in range(self.days):
-            self.dateToPrice[self.df.index[x].strftime("%m-%d-%Y")] = self.df.Close[x]
+            self.dateToPrice[self.dates[x]] = self.df.Close[x]
         
         self.fig = make_subplots(shared_xaxes     = True,
                                  subplot_titles   = ((title, "Volume")),
@@ -52,7 +55,33 @@ class Chart:
                                       name = name),
                            secondary_y = True)
 
-    #Make sure to clean up the code here!
+    def __addTrendlineExtend(self, arr, extend, leftIndex, rightIndex, date1, date2, slope):
+        #Do right side here first
+        ex = extend
+        inFront = rightIndex + 1
+        counter = 0
+        
+        while ex > 0 and inFront < len(self.dates):
+            numDays = (datetime.strptime(self.dates[inFront], "%m-%d-%Y") - datetime.strptime(self.dates[inFront - 1], "%m-%d-%Y")).days
+            counter += numDays
+            arr[inFront] = self.dateToPrice[date2] + (counter * slope)
+            ex -= numDays
+            inFront += 1
+            
+        #Now do the left side!
+        ex = extend
+        inBack = leftIndex - 1
+        counter = 0
+        
+        while ex > 0 and inBack >= 0:
+            numDays = (datetime.strptime(self.dates[inBack + 1], "%m-%d-%Y") - datetime.strptime(self.dates[inBack], "%m-%d-%Y")).days
+            counter += numDays
+            if self.dateToPrice[date1] - (counter * slope) < 0:
+                break
+            arr[inBack] = self.dateToPrice[date1] - (counter * slope)
+            ex -= numDays
+            inBack -= 1
+        
     def addTrendline(self, date1, date2, name, color, extend = 5):
         if date1 not in self.dateToPrice.keys():
             print("The start date is not a trading day! '" + name + "' will not be displayed...")
@@ -61,62 +90,38 @@ class Chart:
             print("The end date is not a trading day! '" + name + "' will not be displayed...")
             return
         
+        #Get the slope for the trendline
         diff = self.dateToPrice[date2] - self.dateToPrice[date1]
         days = (datetime.strptime(date2, "%m-%d-%Y") - datetime.strptime(date1, "%m-%d-%Y")).days
         slope = diff / days
         counter = 0
-
-        leftIndex = None
-        rightIndex = None
         
-        d1 = date1[6:] + "-" + date1[0:5]
-        d2 = date2[6:] + "-" + date2[0:5]
-        
-        arr = []
-        
-        index = -1;
-        for x in range(len(self.df.index)):
-            if self.df.index[x].strftime("%m-%d-%Y") == date1:
-                index = x
+        #Get the starting and ending index-----
+        index = leftIndex = rightIndex = None
+        for x in range(len(self.dates)):
+            if self.dates[x] == date1:
+                leftIndex = index = x
+            elif self.dates[x] == date2:
+                rightIndex = x
                 break
         
-        prev = self.df.index[index].strftime("%m-%d-%Y")
-        
+        prev = self.dates[index]
+        arr = []
+        d1 = date1[6:] + "-" + date1[0:5]
+        d2 = date2[6:] + "-" + date2[0:5]
         for x in range(self.days):
-            currentDate = self.df.index[x]
+            currentDate = self.dates[x]
+            currentDateYMD = currentDate[6:] + "-" + currentDate[0:5]
             
-            if currentDate.strftime("%m-%d-%Y") == date1:
-                leftIndex = x
-                
-            if currentDate.strftime("%m-%d-%Y") == date2:
-                rightIndex = x
-
-            if currentDate.strftime("%Y-%m-%d") >= d1 and currentDate.strftime("%Y-%m-%d") <= d2:
-                counter += (datetime.strptime(currentDate.strftime("%m-%d-%Y"), "%m-%d-%Y") - datetime.strptime(prev, "%m-%d-%Y")).days
+            if currentDateYMD >= d1 and currentDateYMD <= d2:
+                counter += (datetime.strptime(currentDate, "%m-%d-%Y") - datetime.strptime(prev, "%m-%d-%Y")).days
                 arr.append(self.dateToPrice[date1] + (counter * slope))
-                prev = currentDate.strftime("%m-%d-%Y")
+                prev = currentDate
             else:
                 arr.append(None)
-            
-        #This needs to be fixed
-        #for x in range(1, 1 + extend):
-            #if(leftIndex - x >= 0):
-                #arr[leftIndex - x] = arr[leftIndex] - (x * slope)
-            #if(rightIndex + x <= self.days - 1):
-                #arr[rightIndex + x] = arr[rightIndex] + (x * slope)
                 
-        #Do right side here first
-        ex = extend
-        inFront = rightIndex + 1
-        counter = 0
-        
-        while(ex > 0 and inFront < len(self.df.index)):
-            numDays = (datetime.strptime(self.df.index[inFront].strftime("%m-%d-%Y"), "%m-%d-%Y") - datetime.strptime(self.df.index[inFront - 1].strftime("%m-%d-%Y"), "%m-%d-%Y")).days
-            counter += numDays
-            arr[inFront] = self.dateToPrice[date2] + (counter * slope)
-            ex -= numDays
-            inFront += 1
-            
+        if extend > 0:
+            self.__addTrendlineExtend(arr, extend, leftIndex, rightIndex, date1, date2, slope)
             
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = arr,
