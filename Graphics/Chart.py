@@ -57,6 +57,7 @@ class Chart:
 
     def __addTrendlineExtend(self, arr, extend, leftIndex, rightIndex, date1, date2, slope):
         #Do right side here first
+        #If extend past right limit, add more indices with value 'None'?
         ex = extend
         inFront = rightIndex + 1
         counter = 0
