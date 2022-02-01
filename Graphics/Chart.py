@@ -97,7 +97,7 @@ class Chart:
         slope = diff / days
         counter = 0
         
-        #Get the starting and ending index-----
+        #Get the starting and ending index
         index = leftIndex = rightIndex = None
         for x in range(len(self.dates)):
             if self.dates[x] == date1:
@@ -106,10 +106,15 @@ class Chart:
                 rightIndex = x
                 break
         
-        prev = self.dates[index]
+        #Initialize auxilary array for the trendline and other variables to help with
+        #calculating each value for the trendline
         arr = []
+        prev = self.dates[index]
         d1 = date1[6:] + "-" + date1[0:5]
         d2 = date2[6:] + "-" + date2[0:5]
+        
+        #Loop though all the days (change to just start and end index?) and append next value
+        #to create trendline
         for x in range(self.days):
             currentDate = self.dates[x]
             currentDateYMD = currentDate[6:] + "-" + currentDate[0:5]
