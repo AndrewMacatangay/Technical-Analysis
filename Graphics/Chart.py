@@ -2,7 +2,7 @@ import pandas as pd
 from pandas_datareader import data as web
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 class Chart:
     def __init__(self, ticker, start, end, title, chartType):
@@ -60,6 +60,11 @@ class Chart:
         #If extend past right limit, add more indices with value 'None'? Use timedelta!
         ex = extend
         counter = 0
+        
+        #Able to use timedelta to get the next day. Just append 'None' to self.df.index
+        #and continue appending to arr to add on to the trendline
+        date = datetime.strptime(date2, "%m-%d-%Y")
+        print(date + timedelta(days = 1))
         
         while ex > 0 and rightIndex < len(self.dates):
             numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
