@@ -57,31 +57,29 @@ class Chart:
 
     def __addTrendlineExtend(self, arr, extend, leftIndex, rightIndex, date1, date2, slope):
         #Do right side here first
-        #If extend past right limit, add more indices with value 'None'?
+        #If extend past right limit, add more indices with value 'None'? Use timedelta!
         ex = extend
-        inFront = rightIndex + 1
         counter = 0
         
-        while ex > 0 and inFront < len(self.dates):
-            numDays = (datetime.strptime(self.dates[inFront], "%m-%d-%Y") - datetime.strptime(self.dates[inFront - 1], "%m-%d-%Y")).days
+        while ex > 0 and rightIndex < len(self.dates):
+            numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
             counter += numDays
-            arr[inFront] = self.dateToPrice[date2] + (counter * slope)
+            arr[rightIndex] = self.dateToPrice[date2] + (counter * slope)
             ex -= numDays
-            inFront += 1
+            rightIndex += 1
             
         #Now do the left side!
         ex = extend
-        inBack = leftIndex - 1
         counter = 0
         
-        while ex > 0 and inBack >= 0:
-            numDays = (datetime.strptime(self.dates[inBack + 1], "%m-%d-%Y") - datetime.strptime(self.dates[inBack], "%m-%d-%Y")).days
+        while ex > 0 and leftIndex - 1 >= 0:
+            numDays = (datetime.strptime(self.dates[leftIndex + 1], "%m-%d-%Y") - datetime.strptime(self.dates[leftIndex], "%m-%d-%Y")).days
             counter += numDays
             if self.dateToPrice[date1] - (counter * slope) < 0:
                 break
-            arr[inBack] = self.dateToPrice[date1] - (counter * slope)
+            arr[leftIndex] = self.dateToPrice[date1] - (counter * slope)
             ex -= numDays
-            inBack -= 1
+            leftIndex -= 1
         
     def addTrendline(self, date1, date2, name, color, extend = 5):
         if date1 not in self.dateToPrice.keys():
