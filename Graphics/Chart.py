@@ -64,7 +64,32 @@ class Chart:
         #Able to use timedelta to get the next day. Just append 'None' to self.df.index
         #and continue appending to arr to add on to the trendline
         date = datetime.strptime(date2, "%m-%d-%Y")
-        print(date + timedelta(days = 1))
+        
+        #print(self.df.index)
+        #Only if date2 + extend in not in range of specified dates
+        #print(datetime.strftime(date + timedelta(extend), "%m-%d-%Y"))
+        #print(self.dateToPrice.keys())
+        
+        #If last date of range + extend is out of range, then we may need to append some indices
+        #Make sure to only append the number of days that we need remaining, and not just the extend value
+        
+        if date + timedelta(extend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
+            excessDays = (date + timedelta(extend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
+            print(excessDays)
+            print(type(excessDays))
+            for x in range(excessDays):
+                #print(self.df)
+                #print(type(self.df.index[0]))
+                #print(self.df.index[0])
+                #Figure out how to append here!
+                #print(type(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))))
+                #print(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")))
+                #self.df.index.append(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")))
+                self.df = self.df.append({pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")): {None}}, ignore_index=False)
+            print(self.df)
+            
+        #Make sure to only take year, month, day, and not time
+        #print(date + timedelta(days = 1))
         
         while ex > 0 and rightIndex < len(self.dates):
             numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
