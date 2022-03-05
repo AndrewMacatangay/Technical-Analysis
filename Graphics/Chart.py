@@ -75,8 +75,7 @@ class Chart:
         
         if date + timedelta(extend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
             excessDays = (date + timedelta(extend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
-            print(excessDays)
-            print(type(excessDays))
+            print(self.df.index)
             for x in range(excessDays):
                 #print(self.df)
                 #print(type(self.df.index[0]))
@@ -85,8 +84,10 @@ class Chart:
                 #print(type(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))))
                 #print(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")))
                 #self.df.index.append(pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")))
-                self.df = self.df.append({pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")): {None}}, ignore_index=False)
-            print(self.df)
+                #self.df = self.df.append({pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y")): {None}}, ignore_index=False)
+                self.df.index.append(pd.Index([pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))]))
+                print(len(self.df.index))
+            print(self.df.index)
             
         #Make sure to only take year, month, day, and not time
         #print(date + timedelta(days = 1))
