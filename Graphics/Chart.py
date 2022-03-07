@@ -68,6 +68,7 @@ class Chart:
         if date + timedelta(extend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
             excessDays = (date + timedelta(extend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
             for x in range(excessDays):
+                self.dates.append(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))
                 self.df = self.df.append(pd.DataFrame([[None, None, None, None, None, None]], columns = ["High", "Low", "Open", "Close", "Volume", "Adj Close"], index = [pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))]))
                 arr.append(None)
         
