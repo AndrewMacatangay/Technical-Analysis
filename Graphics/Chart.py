@@ -55,23 +55,26 @@ class Chart:
                                       name = name),
                            secondary_y = True)
 
-    def __addTrendlineExtend(self, arr, extend, leftIndex, rightIndex, date1, date2, slope):
+    def __addTrendlineExtend(self, arr, leftExtend, rightExtend, leftIndex, rightIndex, date1, date2, slope):
         #Do right side here first
         #If extend past right limit, add more indices with value 'None'? Use timedelta!
-        ex = extend
+        ex = rightExtend
         counter = 0
         
         #Able to use timedelta to get the next day. Just append 'None' to self.df.index
         #and continue appending to arr to add on to the trendline
         date = datetime.strptime(date2, "%m-%d-%Y")
-        
-        if date + timedelta(extend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
-            excessDays = (date + timedelta(extend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
+        print(list(self.dateToPrice.keys())[-1])
+        if date + timedelta(rightExtend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
+            excessDays = (date + timedelta(rightExtend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
             for x in range(excessDays):
-                self.dates.append(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))
+                #Issue here!
+                self.dates.append(datetime.strftime(date + timedelta(1 + x) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"), "%m-%d-%Y"))
                 self.df = self.df.append(pd.DataFrame([[None, None, None, None, None, None]], columns = ["High", "Low", "Open", "Close", "Volume", "Adj Close"], index = [pd.Timestamp(datetime.strftime(date + timedelta(1 + x), "%m-%d-%Y"))]))
                 arr.append(None)
         
+        #Condition here needs to be changed
+        print(self.dates)
         while ex > 0 and rightIndex < len(self.dates):
             numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
             counter += numDays
@@ -80,7 +83,7 @@ class Chart:
             rightIndex += 1
             
         #Now do the left side!
-        ex = extend
+        ex = leftExtend
         counter = 0
         
         while ex > 0 and leftIndex - 1 >= 0:
@@ -92,7 +95,7 @@ class Chart:
             ex -= numDays
             leftIndex -= 1
         
-    def addTrendline(self, date1, date2, name, color, extend = 5):
+    def addTrendline(self, date1, date2, name, color, leftExtend = 0, rightExtend = 0):
         if date1 not in self.dateToPrice.keys():
             print("The start date is not a trading day! '" + name + "' will not be displayed...")
             return
@@ -135,9 +138,9 @@ class Chart:
             else:
                 arr.append(None)
                 
-        if extend > 0:
-            self.__addTrendlineExtend(arr, extend, leftIndex, rightIndex, date1, date2, slope)
-
+        if leftExtend > 0 or rightExtend > 0:
+            self.__addTrendlineExtend(arr, leftExtend, rightExtend, leftIndex, rightIndex, date1, date2, slope)
+            
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = arr,
                                       mode = "lines",
