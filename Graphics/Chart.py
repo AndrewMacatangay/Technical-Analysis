@@ -106,7 +106,6 @@ class Chart:
         diff = self.dateToPrice[date2] - self.dateToPrice[date1]
         days = (datetime.strptime(date2, "%m-%d-%Y") - datetime.strptime(date1, "%m-%d-%Y")).days
         slope = diff / days
-        counter = 0
         
         #Get the starting and ending index
         index = leftIndex = rightIndex = None
@@ -123,11 +122,10 @@ class Chart:
         prev = self.dates[index]
         d1 = date1[6:] + "-" + date1[0:5]
         d2 = date2[6:] + "-" + date2[0:5]
+        counter = 0
         
-        #Loop though all the days (change to just start and end index?) and append next value
-        #to create trendline
-        for x in range(self.days):
-            currentDate = self.dates[x]
+        #Loop though all the days and append price following slope to create trendline
+        for currentDate in self.dates:
             currentDateYMD = currentDate[6:] + "-" + currentDate[0:5]
             
             if currentDateYMD >= d1 and currentDateYMD <= d2:
@@ -137,9 +135,11 @@ class Chart:
             else:
                 arr.append(None)
                 
+        #If the user wishes to extend the line, call the helper function
         if leftExtend > 0 or rightExtend > 0:
             self.__addTrendlineExtend(arr, leftExtend, rightExtend, leftIndex, rightIndex, date1, date2, slope)
 
+        #Create the chart
         self.fig.add_trace(go.Scatter(x    = self.df.index,
                                       y    = arr,
                                       mode = "lines",
