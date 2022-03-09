@@ -70,7 +70,9 @@ class Chart:
         
         while len(arr) < len(self.dates):
             arr.append(None)
-        
+
+        #Fix to not double add at boundary
+        rightIndex += 1
         while ex > 0 and rightIndex < len(self.dates):
             numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
             counter += numDays
@@ -82,6 +84,7 @@ class Chart:
         ex = leftExtend
         counter = 0
         
+        leftIndex -= 1
         while ex > 0 and leftIndex - 1 >= 0:
             numDays = (datetime.strptime(self.dates[leftIndex + 1], "%m-%d-%Y") - datetime.strptime(self.dates[leftIndex], "%m-%d-%Y")).days
             counter += numDays
