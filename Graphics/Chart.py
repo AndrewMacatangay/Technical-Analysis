@@ -56,42 +56,52 @@ class Chart:
                            secondary_y = True)
 
     def __addTrendlineExtend(self, arr, leftExtend, rightExtend, leftIndex, rightIndex, date1, date2, slope):
-        #Do right side here first
-        ex = rightExtend
-        counter = 0
+        #Extend the right side
         
-        date = datetime.strptime(date2, "%m-%d-%Y")
+        #rightDatetime is the date we want to end the extend at
+        #endDatetime is the last date specified by the user upon creation of a Chart
+        rightDatetime = datetime.strptime(date2, "%m-%d-%Y")
+        endDatetime = datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")
         
-        if date + timedelta(rightExtend) > datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y"):
-            excessDays = (date + timedelta(rightExtend) - datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y")).days
+        #If we want to extend past the end date, we have to append to self.dates and self.df
+        if rightDatetime + timedelta(rightExtend) > endDatetime:
+            excessDays = (rightDatetime + timedelta(rightExtend) - endDatetime).days
             for x in range(excessDays):
-                self.dates.append(datetime.strftime(datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y") + timedelta(1 + x), "%m-%d-%Y"))
-                self.df = self.df.append(pd.DataFrame([[None, None, None, None, None, None]], columns = ["High", "Low", "Open", "Close", "Volume", "Adj Close"], index = [pd.Timestamp(datetime.strftime(datetime.strptime(list(self.dateToPrice.keys())[-1], "%m-%d-%Y") + timedelta(1 + x), "%m-%d-%Y"))]))
+                nextDateString = datetime.strftime(endDatetime + timedelta(1 + x), "%m-%d-%Y")
+                self.dates.append(nextDateString)
+                self.df = self.df.append(pd.DataFrame([[None, None, None, None, None, None]],
+                                                      columns = ["High", "Low", "Open", "Close", "Volume", "Adj Close"],
+                                                      index = [pd.Timestamp(nextDateString)]))
         
+        #Fill the rest of the values with None since we need arr and self.dates to ve the same length
         while len(arr) < len(self.dates):
             arr.append(None)
 
-        #Fix to not double add at boundary
+        ex = rightExtend
+        numDays = 0
+            
+        #We must increment this to avoid a double add in arr[rightIndex]
         rightIndex += 1
-        while ex > 0 and rightIndex < len(self.dates):
-            numDays = (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
-            counter += numDays
-            arr[rightIndex] = self.dateToPrice[date2] + (counter * slope)
-            ex -= numDays
+        
+        #While we can extend, update the trendline value
+        while ex - numDays > 0:
+            numDays += (datetime.strptime(self.dates[rightIndex], "%m-%d-%Y") - datetime.strptime(self.dates[rightIndex - 1], "%m-%d-%Y")).days
+            arr[rightIndex] = self.dateToPrice[date2] + (numDays * slope)
             rightIndex += 1
             
-        #Now do the left side!
+        #Extend the left side
         ex = leftExtend
-        counter = 0
+        numDays = 0
         
+        #We must decrement this to avoid a double add in arr[leftIndex]
         leftIndex -= 1
-        while ex > 0 and leftIndex - 1 >= 0:
-            numDays = (datetime.strptime(self.dates[leftIndex + 1], "%m-%d-%Y") - datetime.strptime(self.dates[leftIndex], "%m-%d-%Y")).days
-            counter += numDays
-            if self.dateToPrice[date1] - (counter * slope) < 0:
+        
+        #While we can extend, update the trendline value
+        while ex - numDays > 0:
+            numDays += (datetime.strptime(self.dates[leftIndex + 1], "%m-%d-%Y") - datetime.strptime(self.dates[leftIndex], "%m-%d-%Y")).days
+            if self.dateToPrice[date1] - (numDays * slope) < 0:
                 break
-            arr[leftIndex] = self.dateToPrice[date1] - (counter * slope)
-            ex -= numDays
+            arr[leftIndex] = self.dateToPrice[date1] - (numDays * slope)
             leftIndex -= 1
         
     def addTrendline(self, date1, date2, name, color, leftExtend = 0, rightExtend = 0):
