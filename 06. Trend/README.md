@@ -28,10 +28,12 @@ A momentum indicator that uses recent price changes to determine whether or not 
 
 <b>Swing High</b>
 ```
+The peak price of a security after a movement before it falls back lower.
 ```
 
 <b>Swing Low</b>
 ```
+The low price of a security after a movement before it moves up higher.
 ```
 
 <b>Trend</b>
@@ -51,3 +53,4 @@ A trend that consists of higher peaks and troughs over some period of time.
 
 ## Links/Sources
 https://www.investopedia.com/terms/t/trend.asp
+forexschoolonline.com/swing-high-swing-low/
