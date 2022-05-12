@@ -52,5 +52,5 @@ A trend that consists of higher peaks and troughs over some period of time.
 
 
 ## Links/Sources
-https://www.investopedia.com/terms/t/trend.asp
-forexschoolonline.com/swing-high-swing-low/
+[Forex School Online](forexschoolonline.com/swing-high-swing-low/)<br>
+[Investopedia](https://www.investopedia.com/terms/t/trend.asp)
