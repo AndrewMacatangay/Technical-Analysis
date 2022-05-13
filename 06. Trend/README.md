@@ -48,9 +48,9 @@ A trend that consists of higher peaks and troughs over some period of time.
 
 <b>V-Bottom</b>
 ```
+A recovery that resembles a 'V' shape. The price of an assert undergoes a sharp decline followed by a quick rebound.
 ```
 
-
 ## Links/Sources
-[Forex School Online](forexschoolonline.com/swing-high-swing-low/)<br>
+[Forex School Online](forexschoolonline.com/swing-high-swing-low/) (Swing High/Low)<br>
 [Investopedia](https://www.investopedia.com/terms/t/trend.asp)
