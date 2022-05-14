@@ -1,6 +1,11 @@
 # Trend
 
-## Pitfalls
+A trend is the overall direction in an asset's price. Trendlines help traders to identify possible uptrends and downtrends which can help them
+determine whether it is a good time to make a market transaction. An uptrend can be identified as having higher swing highs and higher swing
+lows, and a downtrend can be identified as having lower swing highs and lower swing lows. In the following example, we will go more in depth
+as to how the process may work.
+
+## Relative Strength Index (RSI)
 
 ## Vocab
 
