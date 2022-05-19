@@ -7,6 +7,9 @@ as to how the process may work.
 
 ## Relative Strength Index (RSI)
 
+The Realtive Strength Index, or RSI for short, is a momentum indicator that uses recent price changes to determine whether or not a security
+is overbought or oversold. 
+
 ## Vocab
 
 <b>Downtrend</b>
