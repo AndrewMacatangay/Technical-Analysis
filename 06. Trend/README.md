@@ -7,8 +7,10 @@ as to how the process may work.
 
 ## Relative Strength Index (RSI)
 
-The Realtive Strength Index, or RSI for short, is a momentum indicator that uses recent price changes to determine whether or not a security
-is overbought or oversold. 
+The Realtive Strength Index, or RSI for short, is a momentum indicator that uses recent price changes to determine whether or not a security is
+overbought or oversold. Typically, an RSI level of 30% would indicate an oversold reading, and a RSI level of 70% would indicate an overbought
+reading. Being oversold may signal a bullish trend, and being overbought may signal a bearish trend. These levels should not just be taken at
+face value though. An analyst must look at the graph to see if an adjusted overbought or oversold horizontal line is appropriate.
 
 ## Vocab
 
@@ -60,5 +62,6 @@ A recovery that resembles a 'V' shape. The price of an assert undergoes a sharp 
 ```
 
 ## Links/Sources
-[Forex School Online](forexschoolonline.com/swing-high-swing-low/) (Swing High/Low)<br>
-[Investopedia](https://www.investopedia.com/terms/t/trend.asp)
+[Forex School Online (Swing High/Low)](forexschoolonline.com/swing-high-swing-low/)<br>
+[Investopedia (Relative Strength Index)](https://www.investopedia.com/terms/r/rsi.asp)<br>
+[Investopedia (Trend)](https://www.investopedia.com/terms/t/trend.asp)
