@@ -12,6 +12,12 @@ overbought or oversold. Typically, an RSI level of 30% would indicate an oversol
 reading. Being oversold may signal a bullish trend, and being overbought may signal a bearish trend. These levels should not just be taken at
 face value though. An analyst must look at the graph to see if an adjusted overbought or oversold horizontal line is appropriate.
 
+<div align = "center">The initial calculation can be modeled as this:</div><br>
+<div align = "center"><img src = "https://user-images.githubusercontent.com/61638274/169633508-84dcc77d-0a80-4331-ac18-04ecb98fb8cc.png" alt = image></div>
+
+<div align = "center">Any subsequent calculation will use this formula instead:</div><br>
+<div align = "center"><img src = "https://user-images.githubusercontent.com/61638274/169633519-9241b37c-15f7-44d8-a638-c89b5216fd02.png" alt = image></div>
+
 ## Vocab
 
 <b>Downtrend</b>
